@@ -88,7 +88,7 @@ void _pop(stack_t **head, unsigned int line_number)
  * _swap - swaps the two top elements of stack
  * @head: pointer to head node of stack
  * @line_number: number of the line parsed.
- * 
+ *
  * Return: nothing
  */
 

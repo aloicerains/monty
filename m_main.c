@@ -6,7 +6,6 @@
  * @argv: arguments.
  * Return: 0 on success.
  */
-#include <stdio.h>
 int main(int argc, char **argv)
 {
 	char *buffer = NULL;

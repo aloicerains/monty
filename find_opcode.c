@@ -5,7 +5,6 @@
  * @head: pointer to head node of stack
  * @line_number: number of the line parsed.
  */
-
 void get_opcode(stack_t **head, unsigned int line_number)
 {
 	int i = 0;
