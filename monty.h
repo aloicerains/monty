@@ -1,6 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,9 +19,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 /**
  * struct instruction_s - opcode and its function
@@ -32,8 +33,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /**
  * struct argu_s - opcode and value
@@ -47,7 +48,6 @@ typedef struct argu_s
 } argu_t;
 extern argu_t arguments;
 argu_t arguments;
-size_t getline(char **lineptr, size_t *n, FILE *stream);
 void get_opcode(stack_t **head, unsigned int line_number);
 void _push(stack_t **head, unsigned int line_number);
 void _print_all(stack_t **head, unsigned int line_number);
