@@ -28,13 +28,11 @@ Files containing Monty byte codes usually have the .m extension. Most of the ind
 
 #### Tasks
 ***
-- [x] **push and pall.** 
- 
+- [x] **push and pall** 
 The opcode push pushes element to the stack.     
 	* Usage: `push <int>`  
 	  where `<int>` is an integer.  
 	* if `<int>` is not an  integer or if there is no argument given to push, print the error message `L<line_number>: usage: push integer', followed by a new line, and exit with the status `EXIT_FAILURE`.  
-
 __The pall opcode__    
 It prints all values on the stack, starting from the top of the stack.  
 	* Usage `pall`  
