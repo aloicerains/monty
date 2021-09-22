@@ -28,18 +28,18 @@ Files containing Monty byte codes usually have the .m extension. Most of the ind
 
 #### Tasks
 ***
--[x] **0.push, and pall.** 
+- [x] **push and pall.** 
  
 The opcode push pushes element to the stack.  
 	* Usage: `push <int>`  
 	  where `<int>` is an integer.  
 	* if `<int>` is not an  integer or if there is no argument given to push, print the error message `L<line_number>: usage: push integer', followed by a new line, and exit with the status `EXIT_FAILURE`.  
 
-**The pall opcode**    
+~~The pall opcode``    
 It prints all values on the stack, starting from the top of the stack.  
 	* Usage `pall`  
 	* If the format is empty, don't print anything.   
-**Format**  
+~~Format~~  
 ```
 julien@ubuntu:~/monty$ cat -e bytecodes/00.m
 push 1$
@@ -51,22 +51,22 @@ julien@ubuntu:~/monty$ ./monty bytecodes/00.m
 2
 1
 ```  
-- [x] **pop Opcode**  
+- [x] **pop**  
 The opcode pop removes the top element of the stack.  
 	* Usage: `pop`  
 	* If the stack is empty, print the error message `L<line_number>: can't pop an empty stack`, followed by a new line, and exit with the status `EXIT_FAILURE`  
-- [x] **swap opcode**  
+- [x] **swap**  
 The opcode swps the top two elements of the stack.  
 	* Usage: `swap`
 	* If the stack contains less than two elements, print the error message `L<line_number>: can't swap, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`  
-- [x]**add Opcode**  
+- [x] **add**  
 The opcode `add` adds the top two elements of the stack.  
 	* Usage: `add`  
 	* If the stack contains less than two elements, print the error message `L<line_number>: can't add, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`  
 	* The result is stored in the second top element of the stack, and the top element is removed, so that at the end:  
 		The top element of the stack contains the result  
 		The stack is one element shorter  
-- [x] **nop Opcode**  
+- [x] **nop**  
 The opcode `nop` doesn't do anything.  
 	> Usage `nop`  
 - [x] **sub**  
@@ -89,7 +89,7 @@ The opcode mul multiplies the second top element of the stack with the top eleme
 The opcode mod computes the rest of the division of the second top element of the stack by the top element of the stack.  
 	* Usage: `mod`  
 	* If the stack contains less than two elements, print the error message `L<line_number>: can't mod, stack too short`, followed by a new line, and exit with the status `EXIT_FAILURE`  
-	> If the top element of the stack is 0, print the error message `L<line_number>: division by zero`, followed by a new line, and exit with the status `EXIT_FAILURE`  
+	* If the top element of the stack is 0, print the error message `L<line_number>: division by zero`, followed by a new line, and exit with the status `EXIT_FAILURE`  
 - [x] **Comments**  
 When the first non-space character of a line is #, treat this line as a comment (don’t do anything).  
 - [x] **pchar**  
