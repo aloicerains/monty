@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * errors - print to stderr error message
+ * print_errors - print error messages to stderr
  * @code: code of error.
  * @argv: args to print.
  * @n_line: line number.
