@@ -1,5 +1,5 @@
 ### The Monty Language
-***
+======================
 #### Description
 ***
 Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python).  It relies on a unique stack, with specific instructions to manipulate it.
@@ -30,16 +30,16 @@ Files containing Monty byte codes usually have the .m extension. Most of the ind
 ***
 - [x] **push and pall.** 
  
-The opcode push pushes element to the stack.  
+The opcode push pushes element to the stack.     
 	* Usage: `push <int>`  
 	  where `<int>` is an integer.  
 	* if `<int>` is not an  integer or if there is no argument given to push, print the error message `L<line_number>: usage: push integer', followed by a new line, and exit with the status `EXIT_FAILURE`.  
 
-~~The pall opcode``    
+__The pall opcode__    
 It prints all values on the stack, starting from the top of the stack.  
 	* Usage `pall`  
 	* If the format is empty, don't print anything.   
-~~Format~~  
+__Format__  
 ```
 julien@ubuntu:~/monty$ cat -e bytecodes/00.m
 push 1$
