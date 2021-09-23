@@ -61,16 +61,19 @@ void _rotl(stack_t **head, unsigned int line_number)
 
 	if (tmp)
 	{
-		while (tmp)
+		if (tmp->next)
 		{
-			tmp1 = tmp;
-			tmp = tmp->next;
+			while (tmp)
+			{
+				tmp1 = tmp;
+				tmp = tmp->next;
+			}
+			tmp1->next = tmp2;
+			tmp2->next = NULL;
+			tmp2->prev = tmp1;
+			if (tmp3)
+				(*head) = tmp3;
 		}
-		tmp1->next = tmp2;
-		tmp2->next = NULL;
-		tmp2->prev = tmp1;
-		if (tmp3)
-			(*head) = tmp3;
 	}
 }
 /**
