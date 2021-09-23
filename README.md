@@ -95,4 +95,19 @@ The opcode pchar prints the char at the top of the stack, followed by a new line
 	* Usage: `pchar`  
 	* The integer stored at the top of the stack is treated as the ascii value of the character to be printed  
 	* If the value is not in the ascii table (man ascii) print the error message `L<line_number>: can't pchar, value out of range`, followed by a new line, and exit with the status `EXIT_FAILURE`  
-	* If the stack is empty, print the error message `L<line_number>: can't pchar, stack empty`, followed by a new line, and exit with the status `EXIT_FAILURE`
+	* If the stack is empty, print the error message `L<line_number>: can't pchar, stack empty`, followed by a new line, and exit with the status `EXIT_FAILURE`  
+- [x] **pstr**  
+The opcode `pstr` prints the string starting at the top of the stack, followed by a new line.  
+	* Usage: `pstr`  
+	* The integer stored in each element of the stack is treated as the ascii value of the character to be printed  
+	* The string stops when either:  
+		The stack is over  
+		The value of the element is 0  
+		The value of the element is not in the ascii table  
+	* If the stack is empty, print only a new line  
+- [x] **rotl**  
+The opcode rotl rotates the stack to the top.  
+	* Usage: `rotl`  
+	* The top element of the stack becomes the last one, and the second top element of the stack becomes the first one  
+	* `rotl` never fails  
+- [x] **rotr**  
