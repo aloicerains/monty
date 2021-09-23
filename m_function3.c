@@ -22,3 +22,53 @@ void _pchar(stack_t **head, unsigned int line_number)
 	}
 	errors1(15, line_number);
 }
+/**
+ * _pstr - Function prints string starting at the top of stack
+ * @head: pointer to head node of stack
+ * @line_number: number of the line parsed.
+ */
+void _pstr(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp = *head;
+	(void) line_number;
+
+	if (!*head)
+	{
+		printf("\n");
+		return;
+	}
+	while (tmp)
+	{
+		if (tmp->n == 0 || tmp->n < 0 || tmp->n > 126)
+		{
+			printf("\n");
+			return;
+		}
+		printf("%c", tmp->n);
+		tmp = tmp->next;
+	}
+	printf("\n");
+}
+/**
+ * _rotl - Function rotates the stack to the top
+ * @head: pointer to head element of stack
+ * @line_number: line number
+ */
+void _rotl(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp = *head, *tmp1 = *head, *tmp2 = *head, *tmp3 = tmp->next;
+	(void) line_number;
+
+	if (tmp)
+	{
+		while (tmp)
+		{
+			tmp1 = tmp;
+			tmp = tmp->next;
+		}
+		tmp1->next = tmp2;
+		tmp2->next = NULL;
+		tmp2->prev = tmp1;
+		(*head) = tmp3;
+	}
+}
