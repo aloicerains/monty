@@ -69,6 +69,7 @@ void _rotl(stack_t **head, unsigned int line_number)
 		tmp1->next = tmp2;
 		tmp2->next = NULL;
 		tmp2->prev = tmp1;
-		(*head) = tmp3;
+		if (tmp3)
+			(*head) = tmp3;
 	}
 }
